@@ -1,12 +1,17 @@
-import React, { Component } from "react";
-class HomeComponent extends Component {
-    render() {
-        return (
-            <div className="page">
-                <h1>Home</h1>
-                <p>Hello from the home page!</p>
-            </div>
-        )
-    }
+import React, { Component } from 'react';
+import './App.css';
+class Home extends Component {
+  constructor(...args) {
+    super(...args);
+    this.state = { items: [] };
+  }
+  render() {
+    return (
+      <div className="page">
+        <h1>Homepage</h1>
+        <p>Hello from a home page!</p>
+      </div>
+    );
+  }
 }
-export default HomeComponent;
+export default Home;
