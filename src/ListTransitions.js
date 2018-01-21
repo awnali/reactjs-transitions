@@ -20,7 +20,7 @@ class Home extends Component {
   onExit = () => console.log('exit');
   render() {
     return (
-      <div>
+      <div className="page">
         <h1>Listpage</h1>
         <button onClick={this.addFood}>Add</button>
         <ul>

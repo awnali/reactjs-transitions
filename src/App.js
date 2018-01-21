@@ -11,7 +11,7 @@ import Page3 from './PageTransition/ThirdPage';
 import Page from './PageTransition';
 
 const RenderPage = Component => (
-  <CSSTransition timeout={1000} classNames="fade" in={true}>
+  <CSSTransition timeout={3000} classNames="fade" in={true}>
     <Component />
   </CSSTransition>
 );
