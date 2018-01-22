@@ -10,6 +10,7 @@ import Page2 from './PageTransition/SecondPage';
 import Page3 from './PageTransition/ThirdPage';
 import Page from './PageTransition';
 import ContainerAnimations from './ContainerAnimations';
+import SlideAnimations from './PageTransition/slide';
 
 const RenderPage = Component => (
   <CSSTransition timeout={3000} classNames="fade" in={true}>
@@ -30,6 +31,7 @@ class App extends Component {
           <Link to="/page2">Page 2</Link>
           <Link to="/page3">Page 3</Link>
           <Link to="/container">Containers</Link>
+            <Link to="/slide">Slide Pages</Link>
         </div>
         <Switch>
           <AnimatedRoutes>
@@ -44,6 +46,7 @@ class App extends Component {
           <Route path="/page3" component={() => RenderPage(Page3)} />
         </Page>
         <Route path="/container" component={ContainerAnimations} />
+        <Route path="/slide" component={SlideAnimations} />
       </div>
     );
   }

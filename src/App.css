@@ -103,6 +103,9 @@
 
 /* how to slide list with transition group */
 
+.slide-list-appear-active {
+  animation: slide-list-in 1s ease-out forwards;
+}
 .slide-list-enter {
   transform: translateX(-100px);
 }
