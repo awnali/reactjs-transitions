@@ -1,88 +1,188 @@
-.fade-enter {
-    opacity: 0.01;
-}
-
-.fade-enter.fade-enter-active {
-    opacity: 1;
-    transition: opacity 3000ms ease-in;
-}
-
-.fade-exit {
-    opacity: 1;
-}
-
-.fade-exit.fade-exit-active {
-    opacity: 0.01;
-    transition: opacity 3000ms ease-in;
-}
+/* Containers page */
+/* This is pure Css animations for static components */
 
 .fade-out {
-    opacity: 0 !important;
-    transition: opacity 3000ms ease-out !important;
+  opacity: 0 !important;
+  transition: opacity 3000ms ease-out !important;
 }
 .scale-out {
-    transform: scale(1.3);
-    transition: all 3000ms ease-out !important;
+  transform: scale(1.3);
+  transition: all 3000ms ease-out !important;
 }
 
 .slide-right {
-    animation: slide-right 1000ms ease-in forwards;
+  animation: slide-right 1000ms ease-in forwards;
 }
 @keyframes slide-right {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(0%);
-    }
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
-
 
 .slide-left {
-    animation: slide-left 1000ms ease-in forwards;
+  animation: slide-left 1000ms ease-in forwards;
 }
 @keyframes slide-left {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0%);
-    }
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
-
 
 .slide-bottom {
-    animation: slide-bottom 1000ms ease-in forwards;
+  animation: slide-bottom 1000ms ease-in forwards;
 }
 @keyframes slide-bottom {
-    from {
-        transform: translateY(100%);
-    }
-    to {
-        transform: translateY(0%);
-    }
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
 }
 
 .slide-top {
-    animation: slide-top 1000ms ease-in forwards;
+  animation: slide-top 1000ms ease-in forwards;
 }
 @keyframes slide-top {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(0%);
-    }
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
 }
 
 .flip {
-    animation: flip 2s ease-out alternate 2;
+  animation: flip 2s ease-out alternate 2;
 }
 @keyframes flip {
-    from {
-        transform: rotateY(0deg);
-    }
-    to {
-        transform: rotateY(180deg);
-    }
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(180deg);
+  }
+}
+
+/* This is for list page */
+
+/* how to fade list with transition group*/
+
+.fade-appear {
+  opacity: 0.01;
+}
+
+.fade-appear-active {
+  opacity: 1;
+  transition: opacity 3000ms ease-in;
+}
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 3000ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 3000ms ease-in;
+}
+
+/* how to slide list with transition group */
+
+.slide-list-enter {
+  transform: translateX(-100px);
+}
+
+.slide-list-enter-active {
+  animation: slide-list-in 1s ease-out forwards;
+}
+
+.slide-list-exit-active {
+  animation: slide-list-out 1s ease-out forwards;
+}
+
+@keyframes slide-list-in {
+  from {
+    transform: translateX(-100px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes slide-list-out {
+  from {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* Flip animation for list with transition group*/
+
+.flip-item-enter {
+  transform: rotateY(180deg);
+}
+
+.flip-item-enter-active {
+  animation: flip-item-in 1s ease-out forwards;
+}
+
+@keyframes flip-item-in {
+  from {
+    transform: rotateY(180deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+.flip-item-exit {
+  transform: rotateY(0deg);
+}
+
+.flip-item-exit-active {
+  animation: flip-item-out 1s ease-out forwards;
+}
+
+@keyframes flip-item-out {
+  from {
+      opacity: 1;
+    transform: rotateY(0deg);
+  }
+  to {
+      opacity: 0;
+    transform: rotateY(180deg);
+  }
+}
+
+/* how to fade list without transition group*/
+
+.flip-list-css-appear-active {
+  animation: flip-list-css 2s ease-out alternate 2;
+}
+@keyframes flip-list-css {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(180deg);
+  }
 }
