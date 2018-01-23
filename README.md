@@ -1,2 +1,10 @@
-react transitions with:
- http://animatedjs.github.io/interactive-docs/ and https://reactcommunity.org/react-transition-group/
+**How animations and transitions work with ReactJS**
+<br/>
+Installation guide:
+<br/>
+`npm install`
+<br/>
+`npm start`
+
+React Page Transitions, List animations, Animate.js with react, React Transition Group, React css transition
+
