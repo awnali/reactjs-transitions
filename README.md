@@ -6,7 +6,7 @@ Installation guide:
 <br/>
 `npm start`
 
-React Page Transitions, List animations, Animate.js with react, React Transition Group, React css transition
+React Page Transitions, List animations, Animate.js with react, React Transition Group 2.2, React css transition
 
 **Animate.js and page fade transition**
 <br/>
