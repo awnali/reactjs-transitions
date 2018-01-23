@@ -103,19 +103,23 @@
 
 /* how to slide list with transition group */
 
+.slide-list-appear {
+  transform: translateX(-100px);
+}
+
 .slide-list-appear-active {
-  animation: slide-list-in 1s ease-out forwards;
+  animation: slide-list-in 300ms ease-out forwards;
 }
 .slide-list-enter {
   transform: translateX(-100px);
 }
 
 .slide-list-enter-active {
-  animation: slide-list-in 1s ease-out forwards;
+  animation: slide-list-in 300ms ease-out forwards;
 }
 
 .slide-list-exit-active {
-  animation: slide-list-out 1s ease-out forwards;
+  animation: slide-list-out 300ms ease-out forwards;
 }
 
 @keyframes slide-list-in {
