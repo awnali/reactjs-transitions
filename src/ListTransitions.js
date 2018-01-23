@@ -46,7 +46,7 @@ class Home extends Component {
         <h1>Flip transition ( with Css only )</h1><span></span>
         <ul>
           {this.state.items.map((f, i) => (
-            <li className="flip-list-css-appear-active">
+            <li className="flip-list-css-appear-active" key={i}>
               {f}
               <span onClick={() => this.removeFood(i)}> X</span>
             </li>
