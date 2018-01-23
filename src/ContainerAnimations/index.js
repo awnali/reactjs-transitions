@@ -7,60 +7,57 @@ class Container extends Component {
   render() {
     return (
       <div>
+        <h1>Components</h1>
         <div
-          className={
-            'page animated-page-wrapper ' + (!this.state.show ? 'fade-out' : '')
-          }
+          style={{ width: '50%', textAlign: 'center' }}
+          className={'ui message ' + (!this.state.show ? 'fade-out' : '')}
         >
-          <h1>Components</h1>
-          <div className="ui message">
-            <div className="header">Changes in Service</div>
-            <p className={this.state.scale ? 'scale-out' : ''}>
-              We just updated our privacy policy here to better service our
-              customers. We recommend reviewing the changes.
-            </p>
-            <button className="ui primary button" onClick={this.onHide}>
-              Hide
-            </button>
-            <button className="ui button" onClick={this.onScale}>
-              Scale
-            </button>
-          </div>
-          <div className="ui message slide-left">
-            <div className="header">Slide Left</div>
-            <p>
-              We just updated our privacy policy here to better service our
-              customers. We recommend reviewing the changes.
-            </p>
-          </div>
-          <div className="ui message slide-right">
-            <div className="header">Slide Right</div>
-            <p>
-              We just updated our privacy policy here to better service our
-              customers. We recommend reviewing the changes.
-            </p>
-          </div>
-          <div className="ui message slide-top">
-            <div className="header">Slid Top</div>
-            <p>
-              We just updated our privacy policy here to better service our
-              customers. We recommend reviewing the changes.
-            </p>
-          </div>
-          <div className="ui message slide-bottom">
-            <div className="header">Slid bottom</div>
-            <p>
-              We just updated our privacy policy here to better service our
-              customers. We recommend reviewing the changes.
-            </p>
-          </div>
-          <div className="ui message flip">
-            <div className="header">Slid bottom</div>
-            <p>
-              We just updated our privacy policy here to better service our
-              customers. We recommend reviewing the changes.
-            </p>
-          </div>
+          <div className="header">Changes in Service</div>
+          <p className={this.state.scale ? 'scale-out' : ''}>
+            We just updated our privacy policy here to better service our
+            customers. We recommend reviewing the changes.
+          </p>
+          <button className="ui primary button" onClick={this.onHide}>
+            Hide
+          </button>
+          <button className="ui button" onClick={this.onScale}>
+            Scale
+          </button>
+        </div>
+        <div className="ui message slide-left">
+          <div className="header">Slide Left</div>
+          <p>
+            We just updated our privacy policy here to better service our
+            customers. We recommend reviewing the changes.
+          </p>
+        </div>
+        <div className="ui message slide-right">
+          <div className="header">Slide Right</div>
+          <p>
+            We just updated our privacy policy here to better service our
+            customers. We recommend reviewing the changes.
+          </p>
+        </div>
+        <div className="ui message slide-top">
+          <div className="header">Slid Top</div>
+          <p>
+            We just updated our privacy policy here to better service our
+            customers. We recommend reviewing the changes.
+          </p>
+        </div>
+        <div className="ui message slide-bottom">
+          <div className="header">Slid bottom</div>
+          <p>
+            We just updated our privacy policy here to better service our
+            customers. We recommend reviewing the changes.
+          </p>
+        </div>
+        <div className="ui message flip">
+          <div className="header">Slid bottom</div>
+          <p>
+            We just updated our privacy policy here to better service our
+            customers. We recommend reviewing the changes.
+          </p>
         </div>
       </div>
     );

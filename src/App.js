@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
+import { Dropdown, Menu } from 'semantic-ui-react'
 import Home from './Home';
 import Subpage from './Subpage';
 import ListTransition from './ListTransitions';
@@ -21,18 +22,28 @@ const RenderPage = Component => (
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="TopBar">
-          <Link to="/">Home</Link>
-          <Link to="/subpage">Subpage</Link>
-          <Link to="/list">List</Link>
-
-          <Link to="/page1">Page 1</Link>
-          <Link to="/page2">Page 2</Link>
-          <Link to="/page3">Page 3</Link>
-          <Link to="/container">Containers</Link>
-            <Link to="/slide">Slide Pages</Link>
-        </div>
+      <div className="ui container">
+          <Menu size='mini'>
+              <Menu.Menu>
+                  <Dropdown item text='Animate.Js'>
+                      <Dropdown.Menu>
+                          <Dropdown.Item><Link to="/">Home</Link></Dropdown.Item>
+                          <Dropdown.Item><Link to="/subpage">Subpage</Link></Dropdown.Item>
+                      </Dropdown.Menu>
+                  </Dropdown>
+              </Menu.Menu>
+              <Menu.Menu>
+                  <Dropdown item text='Page Fade'>
+                      <Dropdown.Menu>
+                          <Dropdown.Item><Link to="/page1">Page 1</Link></Dropdown.Item>
+                          <Dropdown.Item><Link to="/page2">Page 2</Link></Dropdown.Item>
+                          <Dropdown.Item><Link to="/page3">Page 3</Link></Dropdown.Item>
+                      </Dropdown.Menu>
+                  </Dropdown>
+              </Menu.Menu>
+              <Menu.Item name='home' ><Link to="/container">Containers</Link></Menu.Item>
+              <Menu.Item name='messages'><Link className="item" to="/slide">Slide Pages</Link></Menu.Item>
+          </Menu>
         <Switch>
           <AnimatedRoutes>
             <Route exact path="/" component={Home} />

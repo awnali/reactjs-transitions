@@ -1,6 +1,30 @@
 import React, { Component } from 'react';
 import './App.css';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
+const Transition = ({ items, classNames, timeout = 1000, onEnter, onExit }) => (
+  <ul>
+    <TransitionGroup>
+      {items.map((f, i) => (
+        <CSSTransition
+          timeout={timeout}
+          classNames={classNames}
+          onEnter={onEnter}
+          onExit={onExit}
+          in={true}
+          key={i}
+          appear
+        >
+          <li style={{backgroundColor: 'blue'}}>
+            {f}
+            <span onClick={() => this.removeFood(i)}> X</span>
+          </li>
+        </CSSTransition>
+      ))}
+    </TransitionGroup>
+  </ul>
+);
+
 class Home extends Component {
   constructor(...args) {
     super(...args);
@@ -23,27 +47,15 @@ class Home extends Component {
         <h1>Listpage</h1>
         <button onClick={this.addFood}>Add</button>
         <h1>Fade transition</h1>
-        <ul>
-          <TransitionGroup>
-            {this.state.items.map((f, i) => (
-              <CSSTransition
-                timeout={3000}
-                classNames="fade"
-                onEnter={this.onEnter}
-                onExit={this.onExit}
-                in={true}
-                key={i}
-                appear
-              >
-                <li>
-                  {f}
-                  <span onClick={() => this.removeFood(i)}> X</span>
-                </li>
-              </CSSTransition>
-            ))}
-          </TransitionGroup>
-        </ul>
-        <h1>Flip transition ( with Css only )</h1><span></span>
+        <Transition
+          items={this.state.items}
+          classNames="fade"
+          timeout={1000}
+          onEnter={this.onEnter}
+          onExit={this.onExit}
+        />
+        <h1>Flip transition ( with Css only )</h1>
+        <span />
         <ul>
           {this.state.items.map((f, i) => (
             <li className="flip-list-css-appear-active" key={i}>
@@ -53,47 +65,21 @@ class Home extends Component {
           ))}
         </ul>
         <h1>Flip transition</h1>
-        <ul>
-          <TransitionGroup>
-            {this.state.items.map((f, i) => (
-              <CSSTransition
-                timeout={1000}
-                classNames="flip-item"
-                onEnter={this.onEnter}
-                onExit={this.onExit}
-                in={true}
-                key={i}
-                appear
-              >
-                <li style={{backgroundColor: 'red', width: '70px'}}>
-                  {f}
-                  <span onClick={() => this.removeFood(i)}> X</span>
-                </li>
-              </CSSTransition>
-            ))}
-          </TransitionGroup>
-        </ul>
+        <Transition
+          items={this.state.items}
+          classNames="flip-item"
+          timeout={1000}
+          onEnter={this.onEnter}
+          onExit={this.onExit}
+        />
         <h1>Slide transition</h1>
-        <ul>
-          <TransitionGroup>
-            {this.state.items.map((f, i) => (
-              <CSSTransition
-                timeout={1000}
-                classNames="slide-list"
-                onEnter={this.onEnter}
-                onExit={this.onExit}
-                in={true}
-                key={i}
-                appear
-              >
-                <li>
-                  {f}
-                  <span onClick={() => this.removeFood(i)}> X</span>
-                </li>
-              </CSSTransition>
-            ))}
-          </TransitionGroup>
-        </ul>
+        <Transition
+          items={this.state.items}
+          classNames="slide-list"
+          timeout={1000}
+          onEnter={this.onEnter}
+          onExit={this.onExit}
+        />
       </div>
     );
   }
