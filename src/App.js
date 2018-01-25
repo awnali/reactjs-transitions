@@ -41,8 +41,9 @@ class App extends Component {
                       </Dropdown.Menu>
                   </Dropdown>
               </Menu.Menu>
+              <Menu.Item name='messages'><Link to="/list">List</Link></Menu.Item>
               <Menu.Item name='home' ><Link to="/container">Containers</Link></Menu.Item>
-              <Menu.Item name='messages'><Link className="item" to="/slide">Slide Pages</Link></Menu.Item>
+              <Menu.Item name='messages'><Link to="/slide">Slide Pages</Link></Menu.Item>
           </Menu>
         <Switch>
           <AnimatedRoutes>

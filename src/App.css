@@ -108,18 +108,18 @@
 }
 
 .slide-list-appear-active {
-  animation: slide-list-in 300ms ease-out forwards;
+  animation: slide-list-in 3s ease-out forwards;
 }
 .slide-list-enter {
   transform: translateX(-100px);
 }
 
 .slide-list-enter-active {
-  animation: slide-list-in 300ms ease-out forwards;
+  animation: slide-list-in 3s ease-out forwards;
 }
 
 .slide-list-exit-active {
-  animation: slide-list-out 300ms ease-out forwards;
+  animation: slide-list-out 3s ease-out forwards;
 }
 
 @keyframes slide-list-in {
@@ -149,7 +149,7 @@
 }
 
 .flip-item-enter-active {
-  animation: flip-item-in 1s ease-out forwards;
+  animation: flip-item-in 3s ease-out forwards;
 }
 
 @keyframes flip-item-in {
@@ -166,7 +166,7 @@
 }
 
 .flip-item-exit-active {
-  animation: flip-item-out 1s ease-out forwards;
+  animation: flip-item-out 3s ease-out forwards;
 }
 
 @keyframes flip-item-out {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-const Transition = ({ items, classNames, timeout = 1000, onEnter, onExit }) => (
+const Transition = ({ items, removeItem, classNames, timeout = 1000, onEnter, onExit }) => (
   <ul>
     <TransitionGroup>
       {items.map((f, i) => (
@@ -17,7 +17,7 @@ const Transition = ({ items, classNames, timeout = 1000, onEnter, onExit }) => (
         >
           <li style={{backgroundColor: 'blue'}}>
             {f}
-            <span onClick={() => this.removeFood(i)}> X</span>
+            <span onClick={() => removeItem(i)}> X</span>
           </li>
         </CSSTransition>
       ))}
@@ -53,6 +53,7 @@ class Home extends Component {
           timeout={1000}
           onEnter={this.onEnter}
           onExit={this.onExit}
+          removeItem={this.removeFood}
         />
         <h1>Flip transition ( with Css only )</h1>
         <span />
@@ -71,6 +72,7 @@ class Home extends Component {
           timeout={1000}
           onEnter={this.onEnter}
           onExit={this.onExit}
+          removeItem={this.removeFood}
         />
         <h1>Slide transition</h1>
         <Transition
@@ -79,6 +81,7 @@ class Home extends Component {
           timeout={1000}
           onEnter={this.onEnter}
           onExit={this.onExit}
+          removeItem={this.removeFood}
         />
       </div>
     );

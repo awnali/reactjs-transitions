@@ -11,7 +11,7 @@ const PageSlide = props => (
   <CSSTransition
     {...props}
     classNames="slide-list"
-    timeout={500}
+    timeout={3000}
     mountOnEnter={true}
     unmountOnExit={true}
     appear
@@ -36,7 +36,7 @@ const SlideTransition = props => {
       <TransitionGroup>
         <PageSlide key={locationKey}>
           <Switch location={props.location}>
-            <Route path="/slide" component={Page1} />
+            <Route exact path="/slide" component={Page1} />
             <Route path="/slide/trans2" component={Page2} />
             <Route path="/slide/trans3" component={Page3} />
           </Switch>
